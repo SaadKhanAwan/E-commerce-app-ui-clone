@@ -6,10 +6,18 @@ class ScreenChangeProvider extends ChangeNotifier {
   int _current_index = 0;
   int get counter => _current_index;
 
+  int _page_index = 0;
+  int get Pagevalue => _page_index;
+
   // to change screens providnig index
   // ignore: non_constant_identifier_names
   ChangeScreen(value) {
     _current_index = value;
+    notifyListeners();
+  }
+
+  Changepages(value) {
+    _page_index = value;
     notifyListeners();
   }
 

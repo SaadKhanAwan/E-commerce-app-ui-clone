@@ -37,9 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 20),
           Expanded(
               // logic for screen shifting
-              child: provider.counter == 0
+              child: provider.Pagevalue == 0
                   ? _buildAllProducts()
-                  : provider.counter == 1
+                  : provider.Pagevalue == 1
                       ? _buildJacket()
                       : _buildSneakers())
         ],
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () {
         // this is to shift the screens maunualy
-        provider.ChangeScreen(index);
+        provider.Changepages(index);
       },
       child: Container(
         width: 80,
@@ -61,7 +61,8 @@ class _HomeScreenState extends State<HomeScreen> {
         margin: const EdgeInsets.only(top: 10, right: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: provider.counter == index ? Colors.red : Colors.red.shade300,
+            color:
+                provider.Pagevalue == index ? Colors.red : Colors.red.shade300,
             borderRadius: BorderRadius.circular(8)),
         child: Text(
           name,
